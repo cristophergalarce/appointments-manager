@@ -18,20 +18,24 @@ const Confirmation = () => {
         </CardHeader>
         <CardContent className="space-y-4 text-left p-10 pt-0">
           <div>
-            <strong>Evento:</strong> Una cita de maravilla
+            <p>Evento:</p>
+            <p>Una cita de maravilla</p>
           </div>
           <div>
-            <strong>Cuándo:</strong> Lunes, 23 de enero de 2023
+            <p>Cuándo:</p>
+            <p>Lunes, 23 de enero de 2023</p>
             <br />
-            De 5:00 pm a 6:00 pm horas (hora de verano de Chile)
+            <p>De 5:00 pm a 6:00 pm horas (hora de verano de Chile)</p>
           </div>
           <div>
-            <strong>Dónde:</strong> Online (el detalle lo verás en tu email)
+            <p>Dónde:</p>
+            <p>Online (el detalle lo verás en tu email)</p>
           </div>
           <div>
-            <strong>Organiza:</strong> Alice Wonder
+            <p>Organiza:</p>
+            <p>Alice Wonder</p>
             <br />
-            awonderfromcristring@gmail.com
+            <p>awonderfromcristring@gmail.com</p>
           </div>
           <div className="mt-4">
             <p className="text-lg font-semibold">¿Necesitas hacer un cambio?</p>
