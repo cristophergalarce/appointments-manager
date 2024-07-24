@@ -40,7 +40,7 @@ export async function POST(req: Request) {
 
     // Enviar el email usando Resend
     const data = await resend.emails.send({
-      from: 'Appointments App <onboarding@resend.dev>',
+      from: 'Appointments App <appointments@cri.run>',
       to: reservation.participant_email,
       subject: 'Confirmación de tu reserva',
       html: emailContent
