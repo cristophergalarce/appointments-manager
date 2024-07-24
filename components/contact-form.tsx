@@ -31,7 +31,7 @@ export default function ContactForm({ eventId, date, time }: { eventId: string, 
     }
 
     // Send email (this should be done server-side in a real application)
-    await fetch('/api/send-email', {
+    const emailResponse = await fetch('/api/send', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -45,6 +45,10 @@ export default function ContactForm({ eventId, date, time }: { eventId: string, 
         time,
       }),
     })
+
+    if (!emailResponse.ok) {
+      throw new Error('Failed to send email')
+    }
 
     router.push(`/confirmation/${data[0].id}`)
   }
