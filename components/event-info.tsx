@@ -1,39 +1,41 @@
 import * as React from "react";
+import { Event } from "@/types";
 
-interface EventInfoProps {
-  userName: string;
-  eventName: string;
-  eventDate: string;
-  eventTime: string;
-  eventLocation: string;
-  eventDuration: string;
-}
+type EventInfoProps = Omit<Event, 'id' | 'eventPrice' | 'eventDescription'> & {
+  scheduledDate?: string;
+  scheduledTime?: string;
+};
 
 const EventInfo: React.FC<EventInfoProps> = ({
-  userName,
+  hostName,
   eventName,
-  eventDate,
-  eventTime,
+  scheduledDate,
+  scheduledTime,
   eventLocation,
   eventDuration,
 }) => {
   return (
-    <div className="max-w-[325px] space-y-4 p-4">
-      <div className="text-lg text-gray-500">{userName}</div>
+    <div className="max-w-[325px] space-y-4 p-4 border rounded-lg shadow-sm">
+      <div className="text-lg text-gray-500">{hostName}</div>
       <div className="text-xl font-medium">{eventName}</div>
-      <div className="text-sm text-gray-500">
-        <p>
-          Cuándo: {eventDate} {eventTime}
-        </p>
-        <p>
-          Dónde: {eventLocation}
-        </p>
-        <p>
-          Duración: {eventDuration}
-        </p>
+      <div className="space-y-2 text-sm text-gray-500">
+        {scheduledDate && scheduledTime && (
+          <div>
+            <p className="font-semibold">Cuándo</p>
+            <div>{new Date(scheduledDate).toLocaleDateString()}</div>
+            <div>{scheduledTime}</div>
+          </div>
+        )}
+        <div>
+          <p className="font-semibold">Dónde</p>
+          <div>{eventLocation}</div>
+        </div>
+        <div>
+          <p className="font-semibold">Duración</p>
+          <div>{eventDuration}</div>
+        </div>
       </div>
     </div>
-    
   );
 };
 

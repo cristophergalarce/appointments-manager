@@ -500,15 +500,9 @@
                                                                                                                                                                                 <div
                                                                                                                                                                                     style="line-height:20px;text-align:left;">
                                                                                                                                                                                     <span
-                                                                                                                                                                                        style="color:#697783;font-weight:500;font-family:Inter,Arial,sans-serif;font-size:14px;line-height:20px;text-align:left;">Demo
-                                                                                                                                                                                        45
-                                                                                                                                                                                        min:
-                                                                                                                                                                                        Cómo
-                                                                                                                                                                                        recibir
-                                                                                                                                                                                        reservas
-                                                                                                                                                                                        en
-                                                                                                                                                                                        tu
-                                                                                                                                                                                        negocio</span>
+                                                                                                                                                                                        style="color:#697783;font-weight:500;font-family:Inter,Arial,sans-serif;font-size:14px;line-height:20px;text-align:left;">
+                                                                                                                                                                                        {{eventName}}
+                                                                                                                                                                                    </span>
                                                                                                                                                                                 </div>
                                                                                                                                                                             </td>
                                                                                                                                                                         </tr>
@@ -680,12 +674,9 @@
                                                                                                                                                                                             <div
                                                                                                                                                                                                 style="line-height:20px;text-align:left;">
                                                                                                                                                                                                 <span
-                                                                                                                                                                                                    style="color:#697783;font-weight:500;font-family:Inter,Arial,sans-serif;font-size:14px;line-height:20px;text-align:left;">Viernes,
-                                                                                                                                                                                                    2
-                                                                                                                                                                                                    de
-                                                                                                                                                                                                    febrero
-                                                                                                                                                                                                    de
-                                                                                                                                                                                                    2024</span>
+                                                                                                                                                                                                    style="color:#697783;font-weight:500;font-family:Inter,Arial,sans-serif;font-size:14px;line-height:20px;text-align:left;">
+                                                                                                                                                                                                    {{eventDate}}
+                                                                                                                                                                                                </span>
                                                                                                                                                                                             </div>
                                                                                                                                                                                         </td>
                                                                                                                                                                                     </tr>
@@ -755,16 +746,9 @@
                                                                                                                                                                                 <div
                                                                                                                                                                                     style="line-height:20px;text-align:left;">
                                                                                                                                                                                     <span
-                                                                                                                                                                                        style="color:#697783;font-weight:500;font-family:Inter,Arial,sans-serif;font-size:14px;line-height:20px;text-align:left;">De
-                                                                                                                                                                                        18:15
-                                                                                                                                                                                        a
-                                                                                                                                                                                        19:00
-                                                                                                                                                                                        horas
-                                                                                                                                                                                        (hora
-                                                                                                                                                                                        de
-                                                                                                                                                                                        verano
-                                                                                                                                                                                        de
-                                                                                                                                                                                        Chile)</span>
+                                                                                                                                                                                        style="color:#697783;font-weight:500;font-family:Inter,Arial,sans-serif;font-size:14px;line-height:20px;text-align:left;">
+                                                                                                                                                                                        {{eventTime}}
+                                                                                                                                                                                    </span>
                                                                                                                                                                                 </div>
                                                                                                                                                                             </td>
                                                                                                                                                                         </tr>
@@ -930,7 +914,9 @@
                                                                                                                                                                                 <div
                                                                                                                                                                                     style="line-height:20px;text-align:left;">
                                                                                                                                                                                     <span
-                                                                                                                                                                                        style="color:#697783;font-weight:500;font-family:Inter,Arial,sans-serif;font-size:14px;line-height:20px;text-align:left;">https://meet.jit.si/DemoComoRecibirReservas</span>
+                                                                                                                                                                                        style="color:#697783;font-weight:500;font-family:Inter,Arial,sans-serif;font-size:14px;line-height:20px;text-align:left;">
+                                                                                                                                                                                        {{eventLocation}}
+                                                                                                                                                                                    </span>
                                                                                                                                                                                 </div>
                                                                                                                                                                             </td>
                                                                                                                                                                         </tr>
@@ -1096,9 +1082,9 @@
                                                                                                                                                                                 <div
                                                                                                                                                                                     style="line-height:20px;text-align:left;">
                                                                                                                                                                                     <span
-                                                                                                                                                                                        style="color:#697783;font-weight:500;font-family:Inter,Arial,sans-serif;font-size:14px;line-height:20px;text-align:left;">Cristopher
-                                                                                                                                                                                        Galarce
-                                                                                                                                                                                        (galarce.pro)</span>
+                                                                                                                                                                                        style="color:#697783;font-weight:500;font-family:Inter,Arial,sans-serif;font-size:14px;line-height:20px;text-align:left;">
+                                                                                                                                                                                        {{hostName}}
+                                                                                                                                                                                    </span>
                                                                                                                                                                                 </div>
                                                                                                                                                                             </td>
                                                                                                                                                                         </tr>
@@ -1173,8 +1159,10 @@
                                                                                                                                                                                                 <span
                                                                                                                                                                                                     style="color:#697783;font-weight:500;font-family:Inter,Arial,sans-serif;font-size:14px;line-height:20px;text-align:left;"><a
                                                                                                                                                                                                         style="color:#697783;text-decoration:none;"
-                                                                                                                                                                                                        href="mailto:cristopher@galarce.pro"
-                                                                                                                                                                                                        target="_blank">cristopher@galarce.pro</a></span>
+                                                                                                                                                                                                        href="mailto:{{participantEmail}}"
+                                                                                                                                                                                                        target="_blank">{{participantEmail}}</a>
+                                                                                                                                                                                                    {{participantName}}
+                                                                                                                                                                                                    </span>
                                                                                                                                                                                             </div>
                                                                                                                                                                                         </td>
                                                                                                                                                                                     </tr>

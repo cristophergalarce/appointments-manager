@@ -2,19 +2,17 @@ import React from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import { Clock } from 'lucide-react';
+import { Event } from '@/types';
 
-interface EventCardProps {
-  userName: string;
-  eventName: string;
-  eventDuration: string;
-  eventPrice: string;
-}
+type EventCardProps = Pick<Event, 'hostName' | 'eventName' | 'eventDuration' | 'eventPrice'> & {
+  onClick?: () => void;
+};
 
-const EventCard: React.FC<EventCardProps> = ({ userName, eventName, eventDuration, eventPrice }) => {
+const EventCard: React.FC<EventCardProps> = ({ hostName, eventName, eventDuration, eventPrice, onClick }) => {
   return (
-    <div className="mb-4">
+    <div onClick={onClick} className="cursor-pointer mb-4">
       <div className="mb-2">
-        <p className="text-sm font-medium">{userName}</p>
+        <p className="text-sm font-medium">{hostName}</p>
       </div>
       <Card className="p-4">
         <h3 className="text-lg font-semibold">{eventName}</h3>
