@@ -1,28 +1,33 @@
-import React from 'react';
-import { Badge } from '@/components/ui/badge';
-import { Card } from '@/components/ui/card';
-import { Clock } from 'lucide-react';
-import { Event } from '@/types';
+import Link from 'next/link'
+import { Clock } from 'lucide-react'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
 
-type EventCardProps = Pick<Event, 'hostName' | 'eventName' | 'eventDuration' | 'eventPrice'> & {
-  onClick?: () => void;
-};
+interface EventCardProps {
+  id: string
+  hostName: string
+  eventName: string
+  eventDuration: string
+  eventPrice: number
+}
 
-const EventCard: React.FC<EventCardProps> = ({ hostName, eventName, eventDuration, eventPrice, onClick }) => {
+export function EventCard({ id, hostName, eventName, eventDuration, eventPrice }: EventCardProps) {
   return (
-    <div onClick={onClick} className="cursor-pointer mb-4">
+    <Link href={`/calendar-available/${id}`} className="no-underline cursor-pointer">
       <div className="mb-2">
-        <p className="text-sm font-medium">{hostName}</p>
+        <p className="text-sm font-medium text-gray-500">{hostName}</p>
       </div>
-      <Card className="p-4">
-        <h3 className="text-lg font-semibold">{eventName}</h3>
-        <div className="flex items-center text-sm text-gray-500 mt-2">
-          <Badge variant="secondary" icon={Clock}>{eventDuration}</Badge>
-        </div>
-        <p className="text-sm font-medium mt-2">{eventPrice}</p>
+      <Card className="hover:shadow-lg transition-shadow">
+        <CardHeader>
+          <CardTitle>{eventName}</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="flex items-center text-sm text-gray-500 mt-2">
+            <Badge variant="secondary" icon={Clock}>{eventDuration}</Badge>
+          </div>
+          <p className="mt-2 font-semibold text-sm">${eventPrice}</p>
+        </CardContent>
       </Card>
-    </div>
-  );
-};
-
-export default EventCard;
+    </Link>
+  )
+}
